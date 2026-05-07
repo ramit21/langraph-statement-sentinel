@@ -1,0 +1,4 @@
+/* Reset of the legacy CRA styles — Ledger Sentinel uses index.css. */
+.App {
+  min-height: 100vh;
+}

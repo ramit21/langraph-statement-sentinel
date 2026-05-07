@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --grid-line: hsl(0, 0%, 92%);
+}
+
+html,
+body,
+#root {
+  background-color: #fafafa; /* zinc-50 */
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #09090b; /* zinc-950 */
+}
+
+.font-display {
+  font-family: "Cabinet Grotesk", "IBM Plex Sans", sans-serif;
+  letter-spacing: -0.01em;
+}
+.font-mono-num {
+  font-family: "JetBrains Mono", monospace;
+  font-feature-settings: "tnum" 1;
+}
+
+/* PII redaction pill */
+.pii-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 2px;
+  background-color: #18181b; /* zinc-900 */
+  color: #d4d4d8; /* zinc-300 */
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.pii-pill .dots {
+  opacity: 0.5;
+  letter-spacing: 0.15em;
+  margin-right: 2px;
+}
+
+/* Safety badge */
+.safety-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border: 1px solid rgba(167, 243, 208, 0.6); /* emerald-200/60 */
+  background: #ecfdf5;
+  color: #047857;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  border-radius: 2px;
+}
+
+/* dashed scanning border for upload zone */
+@keyframes scan-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.scanning::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(24, 24, 27, 0.08) 50%,
+    transparent 100%
+  );
+  animation: scan-sweep 1.4s linear infinite;
+  pointer-events: none;
+}
+
+/* Subtle grid background for empty state */
+.bg-grid {
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 2px;
+}

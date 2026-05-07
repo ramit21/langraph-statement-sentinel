@@ -1,0 +1,125 @@
+{
+  "project_name": "Ledger Sentinel Langraph",
+  "theme": "light",
+  "archetype": "Archetype 4: Swiss & High-Contrast",
+  "domain_context": "Finance / Utility-Tool (Compliance-grade, fintech feel)",
+  "emotional_tone": "Precise, serious, trustworthy, secure",
+  "typography": {
+    "fonts_to_import": [
+      "@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');"
+    ],
+    "headings": {
+      "family": "'Cabinet Grotesk', sans-serif",
+      "weight_classes": "font-medium tracking-tight",
+      "rules": "Never center. Keep tight tracking. High contrast. Do not exceed text-4xl for the main dashboard header."
+    },
+    "body": {
+      "family": "'IBM Plex Sans', sans-serif",
+      "classes": "text-zinc-600 leading-relaxed",
+      "rules": "Optimize for readability. Left-align dense content."
+    },
+    "monospace": {
+      "family": "'JetBrains Mono', monospace",
+      "classes": "tracking-tight",
+      "rules": "CRITICAL: Must be used for all numerals, amounts, dates, account numbers, and masked PII data."
+    }
+  },
+  "colors": {
+    "backgrounds": {
+      "app": "bg-zinc-50",
+      "surface": "bg-white",
+      "surface_hover": "bg-zinc-100",
+      "redaction": "bg-zinc-900"
+    },
+    "text": {
+      "primary": "text-zinc-950",
+      "secondary": "text-zinc-500",
+      "muted": "text-zinc-400",
+      "redaction": "text-zinc-300",
+      "safety": "text-emerald-700"
+    },
+    "borders": {
+      "default": "border-zinc-200",
+      "focus": "border-zinc-400",
+      "safety": "border-emerald-200/60"
+    },
+    "accents": {
+      "primary": "bg-zinc-900 text-white hover:bg-zinc-800",
+      "safety_bg": "bg-emerald-50/50"
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "The 'Control Room' Grid (Dashboard Mode)",
+    "container": "w-full max-w-[1600px] mx-auto p-4 md:p-6 lg:p-8",
+    "structure": {
+      "columns": "grid-cols-1 lg:grid-cols-12",
+      "gaps": "gap-4 lg:gap-6",
+      "main_split": "Left Sidebar (Col span 3) for Upload/Docs, Center Table (Col span 6) for Transactions, Right Panel (Col span 3) for Q&A."
+    },
+    "borders_and_radii": {
+      "radius": "rounded-sm (2px max) - rigid, clinical, precise.",
+      "shadows": "shadow-sm only. Use 1px borders instead of heavy shadows.",
+      "surface_treatment": "Grid Borders (The 'Technical' Look). Use border-collapse and exposed skeletal lines."
+    }
+  },
+  "components": {
+    "pii_masking_treatment": {
+      "visuals": "Pill chips or dotted underlines for masked values. Do not just use plaintext asterisks.",
+      "classes": "inline-flex items-center px-1.5 py-0.5 rounded-[2px] bg-zinc-900 text-zinc-300 font-mono text-xs tracking-widest relative overflow-hidden",
+      "example": "<span class='opacity-50'>••••</span>1234"
+    },
+    "safety_badges": {
+      "visuals": "Prominent indicator showing active content guardrails.",
+      "classes": "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-emerald-50 border border-emerald-200 text-emerald-700 font-medium text-xs font-mono"
+    },
+    "spend_summary_cards": {
+      "visuals": "Flat backgrounds, 1px border, no shadow.",
+      "typography": "Monospace metrics, very large (text-3xl). Label in overline format (uppercase, wide tracking)."
+    },
+    "drag_drop_upload": {
+      "visuals": "Dashed border area with a technical scanning aesthetic. Use Lucide icons like FileText, Scan, ShieldCheck.",
+      "classes": "border-2 border-dashed border-zinc-300 hover:border-zinc-400 bg-white p-8 flex flex-col items-center justify-center transition-colors rounded-sm"
+    },
+    "q_and_a_chat": {
+      "visuals": "High-contrast terminal or structured chat interface. RAG sources should look like footnotes or citation chips.",
+      "user_bubble": "bg-zinc-100 text-zinc-950 rounded-sm p-3",
+      "ai_bubble": "bg-white border border-zinc-200 text-zinc-800 rounded-sm p-3",
+      "input": "rounded-none border-b border-zinc-300 bg-transparent focus:outline-none focus:border-zinc-900 focus:ring-0"
+    },
+    "transactions_table": {
+      "visuals": "Dense, tabular data. Monospace columns for amount and dates.",
+      "headers": "text-xs font-medium text-zinc-500 uppercase tracking-wider",
+      "cells": "border-b border-zinc-100 py-2 text-sm"
+    }
+  },
+  "motion_and_interactions": {
+    "hover_states": "Strict contrast shifts. bg-white to hover:bg-zinc-50.",
+    "animations": "Micro-interactions for scanning/uploading PDFs. Use a 'Tracing Beam' or sweeping gradient effect on the upload zone when active.",
+    "transitions": "transition-colors duration-150 ease-in-out."
+  },
+  "iconography": {
+    "library": "lucide-react",
+    "style": "Technical, sharp. Use stroke-width 1.5 for a finer, more precise look."
+  },
+  "assets": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1718678168268-ba99d32de596?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHxtb25vY2hyb21lJTIwbWFyYmxlJTIwdGV4dHVyZXxlbnwwfHx8fDE3Nzc2NjAyMDF8MA&ixlib=rb-4.1.0&q=85",
+        "category": "empty_state_texture",
+        "description": "Monochrome texture, can be used as a very faint background pattern (opacity-5) for the empty state of the document viewer."
+      }
+    ],
+    "notes": "Images are kept minimal as this is a highly functional, data-dense compliance tool. Rely heavily on typography and structural layout."
+  },
+  "testing": {
+    "attributes": "All interactive elements MUST include data-testid in kebab-case format (e.g., data-testid='upload-pdf-dropzone', data-testid='chat-submit-button')."
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the 'Control Room' grid system for layout density.",
+    "Implement the custom PII masking treatment meticulously using the provided markup structure.",
+    "Do not use generic Shadcn Cards with heavy shadows; strip shadows and enforce 1px borders and sharp/small radiuses.",
+    "Ensure all monetary values and masked fields use 'JetBrains Mono'.",
+    "Avoid centering content inside cards/tables; left-align data for scannability.",
+    "Use standard HTML tags augmented by Tailwind for layout wrappers, but utilize customized Shadcn components for complex interactions (Tables, Inputs, Dialogs)."
+  ]
+}
